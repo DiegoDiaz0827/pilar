@@ -51,22 +51,13 @@ header{
     }
 
     .bola-cristal {
-      
-      border: 6px solid #150022; 
-      box-sizing: border-box;
-      width: 340px;
-      height: 340px;
+      width: 80vw;
+      aspect-ratio: 1 / 1;
+      max-width: 300px;
       border-radius: 50%;
       position: relative;
-      box-shadow: 0 0 10px black;
       overflow: hidden;
-      background: radial-gradient(circle at center, #2d0039, #12001a);
-      box-shadow:
-    0 0 60px 20px rgba(246, 245, 247, 0.932),  
-    
-    0 20px 40px rgba(255, 255, 255, 0.938);           
-    
-      cursor: pointer;
+      background-color: rgba(0, 0, 0, 0.3); 
     }
 
     .bola-cristal::before {
@@ -227,10 +218,10 @@ footer#footer-respuesta.mostrar {
   }
 
   .bola-cristal {
-    width: 90%;
-    height: auto;
+    width: 80vw;
+    height: 80vw;
     max-width: 300px;
-    border-width: 4px;
+    max-height: 300px;
   }
 
   button {
