@@ -1,0 +1,209 @@
+@font-face {
+    font-family: "c";
+    src: url(assets/HARRYP__.TTF)
+}
+
+@font-face {
+    font-family: "a" ;
+    src: url(assets/BucklaneScript_PERSONAL_USE_ONLY.otf);
+}
+
+
+
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(100deg, #7703b9da, #000000, #47023c);
+  animation: moveBg 10s ease infinite;
+  background-size: 400% 400%;
+  font-family: Georgia, serif;
+}
+
+.zona-central {
+   display: flex;
+  justify-content: center;
+  align-items: flex-start; 
+  height: 80vh;            
+  margin-top: -40px;
+  margin-bottom: 0;  
+  
+}
+
+header{
+  font-family: 'c';
+ text-align: center;
+  padding: 20px 0;
+  color: white;
+  font-size: 1.8rem;
+}
+    
+@keyframes moveBg {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+    .contenedor {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: -40;
+    }
+
+    .bola-cristal {
+      
+      border: 6px solid #150022; 
+      box-sizing: border-box;
+      width: 340px;
+      height: 340px;
+      border-radius: 50%;
+      position: relative;
+      box-shadow: 0 0 10px black;
+      overflow: hidden;
+      background: radial-gradient(circle at center, #2d0039, #12001a);
+      box-shadow:
+    0 0 60px 20px rgba(246, 245, 247, 0.932),  
+    
+    0 20px 40px rgba(255, 255, 255, 0.938);           
+    
+      cursor: pointer;
+    }
+
+    .bola-cristal::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("https://i.pinimg.com/originals/80/74/03/807403dfb90c4b8f74288d6fa54869fb.jpg");
+  background-size: 200%;
+  background-position: 0% 0%;
+  opacity: 0.8;
+  z-index: 1;
+  animation: mover-fondo 20s linear infinite;
+}
+    
+
+    .bruma {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle, rgba(255,255,255,0.15), transparent 60%);
+      animation: bruma 5s infinite ease-in-out;
+      z-index: 2;
+    }
+
+    @keyframes bruma {
+      0%, 100% { transform: translateY(0); opacity: 0.2; }
+      50% { transform: translateY(-10px); opacity: 0.5; }
+    }
+
+    @keyframes mover-fondo {
+  0% {
+    background-position: center center;
+  }
+  100% {
+    background-position: 120% 100%;
+  }
+}
+
+    .mensaje {
+      font-family: 'a';
+      width: 80%; 
+  max-width: 260px; 
+  text-align: center;
+  line-height: 1.6; 
+  font-size: 1.4em; 
+  color: #fff;
+  padding: 10px 20px;
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  
+    }
+
+    .mensaje.mostrar {
+      opacity: 1;
+    }
+
+    .base {
+      width: 180px;
+  height: 30px;
+  background: #32003f;
+  border-radius: 20px/10px;
+  margin-top: -10px;
+  position: relative;
+  box-shadow: inset 0 5px 10px rgba(0,0,0,0.6), 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+  .base::before,
+.base::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background: #4f0072;
+  border-radius: 15px/8px;
+  box-shadow: inset 0 3px 5px rgba(0,0,0,0.5);
+}
+
+.base::before {
+  bottom: 100%;
+}
+
+.base::after {
+  bottom: -18px;
+  background: #1d001f;
+  height: 18px;
+  border-radius: 15px/6px;
+}
+
+    .sacudir {
+      animation: sacudir 1.3s;
+    }
+
+    @keyframes sacudir {
+      0% { transform: rotate(0deg); }
+      25% { transform: rotate(3deg); }
+      50% { transform: rotate(-3deg); }
+      75% { transform: rotate(3deg); }
+      100% { transform: rotate(0deg); }
+    }
+
+.clip-wrapper {
+  clip-path: ellipse(50% 48% at 50% 50%);
+  width: 340px;
+  height: 340px;
+}
+
+footer#footer-respuesta {
+  margin-top: 20px;
+  max-width: 600px;
+  padding: 15px 30px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: #fff;
+  font-size: 3em;
+  font-style: italic;
+  text-align: center;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  transition: opacity 0.5s ease;
+  opacity: 0;
+}
+
+footer#footer-respuesta.mostrar {
+  opacity: 1;
+}
+
+.frase-debajo {
+  font-size: 2rem;
+  font-family: 'c';
+  color: white;
+  text-align: center;
+ 
+  margin-top: 20px;
+}
